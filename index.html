@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #rainbow-text {
+            font-size: 2rem;
+            color: transparent;
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <p id="rainbow-text">Comment allez-vous ?</p>
+
+    <script>
+        const rainbowText = document.getElementById("rainbow-text");
+        let colorIndex = 0;
+        const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#8b00ff'];
+        
+        function changeColor() {
+            rainbowText.style.transition = "color 2s ease-in-out";
+            rainbowText.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        setInterval(changeColor, 2000); // Change la couleur toutes les 2 secondes
+    </script>
+</body>
+</html>
