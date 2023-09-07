@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        #rainbow-text {
+            font-size: 2rem;
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowWave 4s linear infinite; /* Animation de la vague */
+        }
+        
+        @keyframes rainbowWave {
+            0% {
+                background-position: 0% center;
+            }
+            100% {
+                background-position: 100% center;
+            }
+        }
+    </style>
 </head>
 <body>
-    Comment allez vous ?
-    
+    <p id="rainbow-text">Comment allez-vous ?</p>
 </body>
 </html>
